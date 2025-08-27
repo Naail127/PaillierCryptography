@@ -1,15 +1,20 @@
 import json
 from Functions import *
+from key import my_dictionary, revered_dic
 
 def add_details(site, user, passw):
+    var = ""
+    var2 = ''
     try:
         with open("details.json", "r") as f:
             passwords = json.load(f)
     except FileNotFoundError:
         passwords = {}
-    username = ''.join(format(b, '08b') for b in user.encode())
-    password = ''.join(format(b, '08b') for b in passw.encode())
-    list = [encrypt(int(username)), encrypt(int(password))]
+    for char in user:
+        var = var + my_dictionary[char]
+    for char in passw:
+        var2 = var2 + my_dictionary[char]
+    list = [encrypt(int(var)), encrypt(int(var2))]
     passwords[site] = list
 
     with open("details.json", "w") as f:
@@ -18,13 +23,57 @@ def add_details(site, user, passw):
     print('Details added')
 
 def delete_details(site):
+    try:
+        with open("details.json", "r") as f:
+            passwords = json.load(f)
+    except FileNotFoundError:
+        print(site + "not found")
     passwords[site] = ''
+    with open("details.json", "w") as f:
+        json.dump(passwords, f)
     print('Details deleted')
 
 def view_details(site):
-    details = passwords[site]
-    list = [decrypt(details[0]), decrypt(details[1])]
-    return list
+    try:
+        with open("details.json", "r") as f:
+            passwords = json.load(f)
+    except FileNotFoundError:
+        print(site + "not found")
+    details = passwords.get(site,0)
+    var1 = ''
+    var2 = ''
+    temp = ''
+    value = 0
+    if details == 0:
+        print('Details not found')
+        return -1
+
+    username = str(decrypt(details[0]))
+    password = str(decrypt(details[1]))
+    if len(username) % 2 :
+        username = "0" + username
+    if len(password) % 2 :
+        password = "0" + password
+    for char in username:
+        value = value + 1
+        if value % 2 == 0:
+            temp = temp + char
+            temp = revered_dic[temp]
+            var1 = var1 + temp
+        else:
+            temp = char
+    username = var1
+    for char in password:
+        value = value + 1
+        if value % 2 == 0:
+            temp = temp + char
+            temp = revered_dic[temp]
+            var2 = var2 + temp
+        else:
+            temp = char
+    password = var2
+
+    return username, password
 
 
 while True:
@@ -39,7 +88,7 @@ while True:
         delete_details(site)
     elif inp == 'view':
         site = input('Enter site: ')
-        list = view_details(site)
-        print(list)
+        x,y = view_details(site)
+        print(" Username: ",x,"\n","Password: ",y)
     elif inp == 'exit':
         break
