@@ -40,7 +40,3 @@ def encrypt_message(message):
     message = encrypt(message)
     return(message)
 
-
-print(124556)
-print(encrypt_message(124556))
-print(decrypt(encrypt_message(124556)))
