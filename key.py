@@ -1,3 +1,4 @@
+#converting letters to numbers to allow them to be used in paillier cryptography
 my_dictionary = {
     "a":"01",
     "b":'02',
@@ -93,7 +94,7 @@ my_dictionary = {
     "Y": "92",
     "Z": "93"
 
-
+# dictionary for converting from decrypted key to original message
 }
 revered_dic = {
     "01":"a",

@@ -1,0 +1,118 @@
+
+/* General Body Styles */
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive;
+    background-color: #f7fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Main container for the form */
+.container {
+    width: 100%;
+    max-width: 28rem;
+    padding: 0 1rem;
+}
+
+/* The main white card */
+.card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Form elements styling */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    text-align: center;
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+     margin-bottom: 1rem; /* Spacing for form elements */
+}
+
+.form-group-large-margin {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    color: #4a5568;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    appearance: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: #4a5568;
+    line-height: 1.25;
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+     margin-bottom: 0.25rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.3);
+}
+
+.btn {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+    transform: scale(1.05);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.5);
+}
+
+.error-message {
+    display: none;
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.error-message strong {
+    font-weight: 700;
+}
