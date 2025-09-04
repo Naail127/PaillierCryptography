@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     async function sendData() {
-        // 1. Get the data from the form
         const usernameInput = document.getElementById('master-username');
         const passwordInput = document.getElementById('master-password');
         const responseElement = document.getElementById('response'); // Get the element once

@@ -10,17 +10,13 @@ CORS(app)
 
 @app.route('/')
 def login_page():
-    # This tells Flask to look in the 'templates' folder for 'login.html'
     return render_template('Login_page.html')
 
-# --- NEW ROUTE FOR THE SUCCESS PAGE ---
 @app.route('/manager')
 def manager_page():
-    # This will be the page we redirect to
     return render_template('PasswordManager.html')
 @app.route('/process-data', methods=['POST'])
 def process_data():
-    # Get the JSON data sent from the JavaScript
     data = request.get_json()
 
     try:
@@ -28,7 +24,6 @@ def process_data():
         message = data.get('message')
 
         if not name or not message:
-            # If data is missing, return an error
             return jsonify({'status': 'error', 'message': 'Missing name or message'}), 400
 
         # Process the data (here, we'll just print it and create a response)
