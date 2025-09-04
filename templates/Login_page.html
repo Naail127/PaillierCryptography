@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Login_page.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Login_page.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Password Manager Interface</title>
 </head>
@@ -36,7 +36,6 @@
         </div>
         <span id="response">cvcvmdfkldkf</span>
     </div>
-  <script src="Login_page.js"></script>
-
 </body>
+<script src="{{ url_for('static', filename='Login_page.js') }}"></script>
 </html>

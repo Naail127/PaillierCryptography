@@ -76,19 +76,19 @@ def view_details(site):
     return username, password
 
 
-while True:
-    inp = input("Options: add, delete, view, exit: ")
-    if  inp == 'add':
-        site = input('Enter site: ')
-        username = input('Enter username: ')
-        password = input('Enter password: ')
-        add_details(site, username, password)
-    elif inp == 'delete':
-        site = input('Enter site: ')
-        delete_details(site)
-    elif inp == 'view':
-        site = input('Enter site: ')
-        x,y = view_details(site)
-        print(" Username: ",x,"\n","Password: ",y)
-    elif inp == 'exit':
-        break
+#while True:
+#    inp = input("Options: add, delete, view, exit: ")
+#    if  inp == 'add':
+#        site = input('Enter site: ')
+#        username = input('Enter username: ')
+#        password = input('Enter password: ')
+#        add_details(site, username, password)
+#    elif inp == 'delete':
+#        site = input('Enter site: ')
+#        delete_details(site)
+#    elif inp == 'view':
+#        site = input('Enter site: ')
+#        x,y = view_details(site)
+#        print(" Username: ",x,"\n","Password: ",y)
+#    elif inp == 'exit':
+#        break

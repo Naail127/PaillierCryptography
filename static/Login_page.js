@@ -27,9 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.json();
+            if (result.status === "success") {
+                responseElement.textContent = "Login successful";
+                console.log("Login successful");
+                window.location.href = "/manager";}
 
             // Update the webpage with the server's response
-            responseElement.textContent = JSON.stringify(result, null, 2);
 
         } catch (error) {
             console.error('Error:', error);
